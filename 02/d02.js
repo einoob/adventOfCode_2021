@@ -19,8 +19,8 @@ const countPosition = (input) => {
     }
   }
 
-  return {a: aim * forward, b: forward * depth};
+  return {'1': aim * forward, '2': forward * depth};
 }
 
-console.log(countPosition(testInput));
-console.log(countPosition(input));
+console.log('test input:\t', countPosition(testInput));
+console.log('actual input:\t', countPosition(input));

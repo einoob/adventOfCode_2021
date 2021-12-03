@@ -1,5 +1,16 @@
 const { input } = require('./input');
 
+function create_sliding_windows_array(measurements) {
+  let i = 2;
+  const sliding_windows_array = [];
+  while (measurements[i]) {
+    const sumOfThree = +measurements[i] + +measurements[i - 1] + +measurements[i - 2];
+    sliding_windows_array.push(sumOfThree);
+    i++;
+  }
+  return sliding_windows_array;
+}
+
 function count_increasements(measurements) {
   let i = 1;
   let sum = 0;
@@ -12,16 +23,5 @@ function count_increasements(measurements) {
   return sum;
 }
 
-function create_sliding_windows_array(measurements) {
-  let i = 2;
-  let sliding_windows_array = [];
-  while (measurements[i]) {
-    const sumOfThree = +measurements[i] + +measurements[i - 1] + +measurements[i - 2];
-    sliding_windows_array = sliding_windows_array.concat(sumOfThree);
-    i++;
-  }
-  return sliding_windows_array;
-}
-
-console.log(count_increasements(input.split('\n'))); // a
-console.log(count_increasements(create_sliding_windows_array(input.split('\n')))); // b
+console.log('1:', count_increasements(input.split('\n')));
+console.log('2:', count_increasements(create_sliding_windows_array(input.split('\n'))));
