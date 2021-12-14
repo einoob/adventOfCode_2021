@@ -82,5 +82,5 @@ const solvePuzzle = (input) => {
   return { '1': gammaRate * epsilonRate, '2': oxygenRate * co2Rate}
 };
 
-console.log('test result:\t', solvePuzzle(testInput));
+// console.log('test result:\t', solvePuzzle(testInput));
 console.log('actual result:\t', solvePuzzle(input));
